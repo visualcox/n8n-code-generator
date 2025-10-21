@@ -56,9 +56,21 @@ npm --version
 터미널 열기: `⌘ + 스페이스바` → `terminal` 입력
 
 ```bash
-# 1. 앱 폴더로 이동
+# 1. 프로젝트 다운로드/복사
+# 방법 A: GitHub에서 클론 (추천)
+cd ~
+git clone https://github.com/your-repo/webapp.git
+cd webapp
+
+# 방법 B: 압축 파일 다운로드 후
+cd ~/Downloads
+unzip webapp.zip
+mv webapp ~/webapp
 cd ~/webapp
-# (또는 실제 경로: cd /Users/사용자이름/webapp)
+
+# 방법 C: 이미 다른 위치에 있다면
+# 현재 위치에서 설치 진행
+# 예: cd /Users/juotte/Desktop/webapp
 
 # 2. 자동 설치 실행
 chmod +x install.sh
