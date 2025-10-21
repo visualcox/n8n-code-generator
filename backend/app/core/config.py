@@ -22,11 +22,12 @@ class Settings(BaseSettings):
     # LLM Configuration
     DEFAULT_LLM_PROVIDER: str = "openai"
     OPENAI_API_KEY: str = ""
+    GEMINI_API_KEY: str = ""
     ANTHROPIC_API_KEY: str = ""
     
     # Local LLM (Ollama)
     OLLAMA_BASE_URL: str = "http://localhost:11434"
-    OLLAMA_MODEL: str = "llama2"
+    OLLAMA_MODEL: str = "llama3.2"
     
     # Learning System
     LEARNING_ENABLED: bool = True

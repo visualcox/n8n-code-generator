@@ -28,6 +28,14 @@ class LLMService:
                 temperature=self.config.get("temperature", 0.7) / 100,
                 max_tokens=self.config.get("max_tokens", 4000)
             )
+        elif self.provider == "gemini":
+            from langchain_google_genai import ChatGoogleGenerativeAI
+            return ChatGoogleGenerativeAI(
+                google_api_key=self.config.get("api_key", settings.GEMINI_API_KEY),
+                model=self.config.get("model_name", "gemini-1.5-pro"),
+                temperature=self.config.get("temperature", 0.7) / 100,
+                max_output_tokens=self.config.get("max_tokens", 4000)
+            )
         elif self.provider == "anthropic":
             from langchain_community.chat_models import ChatAnthropic
             return ChatAnthropic(

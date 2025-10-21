@@ -28,12 +28,26 @@ npm --version
 
 ---
 
-### 2단계: OpenAI API 키 받기 (5분)
+### 2단계: LLM API 키 받기 (5분)
 
+**다음 중 하나 선택:**
+
+#### ⭐ Google Gemini (추천 - 무료)
+1. https://aistudio.google.com/app/apikey 접속
+2. "Create API key" 클릭
+3. 키 복사 → 메모장에 저장
+
+#### OpenAI (가장 강력, 유료)
 1. https://platform.openai.com/ 가입
 2. https://platform.openai.com/api-keys 접속
 3. "Create new secret key" 클릭
 4. 키 복사 → 메모장에 저장
+5. $5-10 크레딧 충전 필요
+
+#### Ollama (완전 무료, 로컬)
+1. https://ollama.ai/download 설치
+2. `ollama pull llama3.2` 실행
+3. API 키 불필요!
 
 ---
 
@@ -57,7 +71,14 @@ chmod +x install.sh
 cd backend
 nano .env
 
-# OPENAI_API_KEY=여기에_실제_API_키_입력
+# 사용할 LLM에 맞게 설정:
+# Gemini: DEFAULT_LLM_PROVIDER=gemini
+#         GEMINI_API_KEY=AIza...
+# OpenAI: DEFAULT_LLM_PROVIDER=openai
+#         OPENAI_API_KEY=sk-proj...
+# Ollama: DEFAULT_LLM_PROVIDER=ollama
+#         (API 키 불필요)
+
 # Ctrl+X → Y → Enter로 저장
 ```
 
@@ -89,8 +110,22 @@ http://localhost:3000
 ### 1. LLM 설정 (한 번만)
 - "설정" 메뉴 클릭
 - "새 LLM 설정 추가"
-- OpenAI / gpt-4-turbo-preview 선택
+
+**Google Gemini (추천):**
+- 제공자: Google Gemini
+- 모델: gemini-1.5-pro
 - API 키 입력
+
+**OpenAI:**
+- 제공자: OpenAI
+- 모델: gpt-4-turbo-preview
+- API 키 입력
+
+**Ollama (무료):**
+- 제공자: Ollama (로컬 무료)
+- 모델: llama3.2
+- URL: http://localhost:11434
+
 - "기본 설정으로 사용" ✅
 
 ### 2. 워크플로우 생성

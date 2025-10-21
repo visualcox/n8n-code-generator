@@ -112,9 +112,10 @@ export default function SettingsPage() {
                     value={newConfig.provider}
                     onChange={(e) => setNewConfig({ ...newConfig, provider: e.target.value })}
                   >
-                    <option value="openai">OpenAI</option>
-                    <option value="anthropic">Anthropic</option>
-                    <option value="ollama">Ollama (로컬)</option>
+                    <option value="openai">OpenAI (GPT-4, GPT-3.5)</option>
+                    <option value="gemini">Google Gemini</option>
+                    <option value="anthropic">Anthropic (Claude)</option>
+                    <option value="ollama">Ollama (로컬 무료)</option>
                     <option value="custom">커스텀</option>
                   </select>
                 </div>
