@@ -56,21 +56,14 @@ npm --version
 터미널 열기: `⌘ + 스페이스바` → `terminal` 입력
 
 ```bash
-# 1. 프로젝트 다운로드/복사
-# 방법 A: GitHub에서 클론 (추천)
-cd ~
-git clone https://github.com/your-repo/webapp.git
-cd webapp
+# 1. 프로젝트 폴더로 이동
+# 이미 다운로드 받으셨다면:
+cd ~/Desktop/GitHub/9afood@gmail.com/n8n-code-generator
 
-# 방법 B: 압축 파일 다운로드 후
-cd ~/Downloads
-unzip webapp.zip
-mv webapp ~/webapp
-cd ~/webapp
-
-# 방법 C: 이미 다른 위치에 있다면
-# 현재 위치에서 설치 진행
-# 예: cd /Users/juotte/Desktop/webapp
+# 또는 GitHub에서 처음 클론하는 경우:
+# cd ~/Desktop
+# git clone https://github.com/visualcox/n8n-code-generator.git
+# cd n8n-code-generator
 
 # 2. 자동 설치 실행
 chmod +x install.sh
@@ -100,13 +93,13 @@ nano .env
 
 **터미널 탭 1:**
 ```bash
-cd ~/webapp
+cd ~/Desktop/GitHub/9afood@gmail.com/n8n-code-generator
 ./start_backend.sh
 ```
 
 **새 터미널 탭 (`⌘ + T`):**
 ```bash
-cd ~/webapp
+cd ~/Desktop/GitHub/9afood@gmail.com/n8n-code-generator
 ./start_frontend.sh
 ```
 
@@ -227,10 +220,10 @@ OpenAI로 생성해서 Notion에 저장하고
 
 ```bash
 # 탭 1
-cd ~/webapp && ./start_backend.sh
+cd ~/Desktop/GitHub/9afood@gmail.com/n8n-code-generator && ./start_backend.sh
 
 # 탭 2 (⌘ + T로 새 탭)
-cd ~/webapp && ./start_frontend.sh
+cd ~/Desktop/GitHub/9afood@gmail.com/n8n-code-generator && ./start_frontend.sh
 
 # 브라우저
 http://localhost:3000
