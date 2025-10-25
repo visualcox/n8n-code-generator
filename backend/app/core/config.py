@@ -41,7 +41,18 @@ class Settings(BaseSettings):
     GITHUB_MIN_STARS: int = 10
     
     # CORS
-    CORS_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:5173"]
+    FRONTEND_URL: str = "http://localhost:3000"
+    
+    @property
+    def CORS_ORIGINS(self) -> List[str]:
+        """Generate CORS origins from FRONTEND_URL"""
+        origins = [
+            "http://localhost:3000",
+            "http://localhost:5173",
+        ]
+        if self.FRONTEND_URL and self.FRONTEND_URL not in origins:
+            origins.append(self.FRONTEND_URL)
+        return origins
     
     # Rate Limiting
     RATE_LIMIT_PER_MINUTE: int = 10
